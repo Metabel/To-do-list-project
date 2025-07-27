@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="{% static 'css/styles.css' %}"></head>
+<body>
+  <h2>Dashboard</h2>
+  <a href="{% url 'add_expense' %}">+ Add Expense</a> | 
+  <a href="{% url 'logout' %}">Logout</a>
+  <ul>
+    {% for expense in expenses %}
+      <li>{{ expense.name }} - {{ expense.amount }} on {{ expense.date }}
+        <a href="{% url 'edit_expense' expense.pk %}">Edit</a>
+        <a href="{% url 'delete_expense' expense.pk %}">Delete</a>
+      </li>
+    {% empty %}
+      <li>No expenses yet</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
