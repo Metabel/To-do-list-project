@@ -1,0 +1,20 @@
+<!-- templates/landing.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome</title>
+  <style>
+    body { font-family: Arial; background: linear-gradient(to right, #6a11cb, #2575fc); color: white; text-align: center; padding-top: 100px; }
+    a {
+      display: inline-block; margin: 10px; padding: 15px 30px;
+      background: white; color: #333; border-radius: 5px; text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Budget Tracker</h1>
+  <a href="{% url 'login' %}">Login</a>
+  <a href="{% url 'register' %}">Register</a>
+</body>
+</html>
